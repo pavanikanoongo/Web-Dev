@@ -1,0 +1,51 @@
+*{
+	box-sizing:border-box;
+	margin:0;
+	padding:0;
+}
+
+.container
+{
+    margin:50px auto;
+	border:5px solid black;
+ 	width:20%;
+	height:70%;
+}
+.image
+{
+	
+	height:50%;
+}
+
+.text
+{
+	
+	height:50%;
+	
+}
+img
+{	width:100%;
+	height:100%;
+}
+.text h2
+{
+
+	margin:30px 20px;
+	
+}
+.text p
+{
+	font-size:1.5rem;
+	margin:30px 20px;
+	
+}
+
+#Buy {
+    background-color:black;
+	color:white;
+	width:13vw;
+	height:2vw;
+	margin:30px 20px;
+	text-align:center;
+    font-size:1.5rem;
+}
