@@ -1,0 +1,24 @@
+*{
+	box-sizing:border-box;
+	margin:0;
+	padding:0;
+}
+
+.info
+{   margin-top:50px;
+	margin-left:20px;
+	padding-left:10px;
+	background-color:rgba(0,0,255,0.3);
+	border-color:blue;
+	border-left-style:solid;
+	
+}
+.warn
+{
+	margin-left:20px;
+	margin-bottom:30px;
+	padding-left:10px;
+	background-color:rgba(255,0,0,0.3);
+	border-color:red;
+	border-left-style:solid;
+}	
