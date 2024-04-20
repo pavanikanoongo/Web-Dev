@@ -1,0 +1,99 @@
+*{
+	box-sizing:border-box;
+	margin:0;
+	padding:0;
+}
+.price{
+	margin-inline:auto;
+	height:70%;
+	display:flex;
+	margin-block:20px;
+	}
+
+.Basic
+{
+	border:1px solid #fbeeee;
+	width:25%;
+	height:90%;
+	margin-block:20px;
+	margin-inline:auto;
+}
+.Pro
+{
+	border:1px solid #fbeeee;
+	width:25%;
+	height:90%;
+	margin-block:20px;
+	margin-inline:auto;
+}
+.Premium
+{
+	border:1px solid #fbeeee;
+	width:25%;
+	height:90%;
+	margin-block:20px;
+	margin-inline:auto;
+}
+.Top
+{	height:20%;
+	width:100%;
+	background-color:black;
+	color:white;
+	margin:0;
+	text-align:center;
+	padding-top:25px;
+}
+
+.Pro-Top
+{
+	height:20%;
+	width:100%;
+	background-color:darkgrey;
+	color:white;
+	text-align:center;
+	padding-top:20px;
+}
+
+.Content
+{
+	padding:10px;
+	width:100%;
+	height:60%;
+	text-align:center;
+}
+.Bottom
+{	display:flex;
+	justify-content:center;
+	align-items:center;
+	background-color:gainsboro;
+	width:100%;
+	height:20%;
+}
+.sign
+{
+	background-color:green;
+	margin-inline:auto;
+	text-align:center;
+	width:9vw;
+	height:3vw;
+	padding:5px;
+	font-size:1.5rem;
+	color:white;
+	
+}
+
+.Content p
+{
+	margin:10px;
+	font-size:1.3rem;
+	font-weight:bold;
+}
+.Content h2
+{
+	margin-top:30px;
+	margin-bottom:10px;
+}
+.Content h5
+{
+	font-weight:normal;
+}
