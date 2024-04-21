@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.big-cont {
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 15px;
+
+
+}
+
+.cont {
+    display: flex;
+    flex-basis: 50%;
+    gap: 20px;
+}
+
+.cont i {
+    color: GoldenRod;
+    font-size: 1.5rem;
+}
+
+.infor p {
+    font-size: 0.8rem;
+    margin: 5px;
+}
