@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover me</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width:100%;
+            height:100vh;
+            position:relative;
+        }
+        button{
+            position:absolute;
+            top:50%;
+            left:50%;
+            font-size:2rem;
+            transform:translate(-50%,-50%);
+            padding:10px;
+            background:none;
+           
+            border:none;
+        }
+        button:before
+        {
+            content: "10";
+            z-index: -1;
+            color:yellow;
+            background:yellow;
+            position:absolute;
+            left:3%;
+            top:0;
+            width:50%;
+            transform:skew(20deg,0deg);
+            transition:1s cubic-bezier(0, 0.96, 0.25, 1);
+        }
+        button:after
+        {
+            content: " 12";
+            z-index: -1;
+            color:rgb(165, 4, 194);
+            background:rgb(165, 4, 194);
+            position:absolute;
+            right:3%;
+            bottom:0;
+            width:50%;
+            transform:skew(20deg,0deg);
+            transition:1s cubic-bezier(0, 0.96, 0.25, 1);
+        }
+        button:hover::before{
+            transform:skew(0,0);
+            transform: translate(80%,25%);
+            transition:1s cubic-bezier(0, 0.96, 0.25, 1);
+            width:60%;
+
+        }
+        button:hover::after{
+            transform:skew(0,0);
+            transform: translate(-70%,-30%);
+            transition:1s cubic-bezier(0, 0.96, 0.25, 1);
+            width:60%;
+
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button>Hover Me</button>
+    </div>
+</body>
+</html>
