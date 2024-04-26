@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animation</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        width:100%;
+        height:100vh;
+        background-color:black;
+        display:flex;
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+        gap:10px;
+      }
+
+      .button{
+        width:200px;
+        height:50px;
+        padding-block:10px;
+        border:5px solid #f5bd07;
+        border-radius:10px;
+        text-decoration:none;
+        color:#f5bd07;
+        font-size:1.3rem;
+        position:relative;
+        overflow: hidden;
+        text-align:center;
+        z-index:2;
+      }
+
+      span{
+        width:25%;
+        height:100%;
+        background-color:#f5bd07;
+        position:absolute;
+        bottom:-100%;
+        border-radius: 100px 100px 0 0;
+        z-index:-1;
+      }
+
+      span:nth-child(1)
+      {
+        position:absolute;
+        left:0;
+        transition:1s cubic-bezier(0, 1.29, 0.16, 1.03);
+      }
+      span:nth-child(2)
+      {
+        position:absolute;
+        left:25%;
+        transition:1s cubic-bezier(0, 1.29, 0.16, 1.03) 0.1s;
+      }
+      span:nth-child(3)
+      {
+        position:absolute;
+        left:49%;
+        transition:1s cubic-bezier(0, 1.29, 0.16, 1.03) 0.2s;
+      }
+      span:nth-child(4)
+      {
+        position:absolute;
+        right:1%;
+        transition:1s cubic-bezier(0, 1.29, 0.16, 1.03) 0.3s;
+      }
+      a:hover{
+        span{
+          position: absolute;
+          bottom:0;
+          transform: scale(2);
+          
+        }
+        
+          color: black;
+        
+        
+      }
+      
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <a class="button" href="#">HOME
+        <span></span><span></span><span></span><span></span>
+      </a>
+      <a class="button" href="#">PRODUCTS
+        <span></span><span></span><span></span><span></span>
+      </a>
+      <a class="button" href="#">SERVICES
+        <span></span><span></span><span></span><span></span>
+      </a>
+      <a class="button" href="#">CONTACT
+        <span></span><span></span><span></span><span></span>
+      </a>
+    </div>
+  </body>
+</html>
