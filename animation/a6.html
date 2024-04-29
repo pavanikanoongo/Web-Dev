@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Google Animation</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin:0;
+            padding:0;
+        }
+        .container{
+            width:100%;
+            height:100vh;
+            display:flex;
+            flex-direction:row;
+            justify-content:center;
+            align-items:center;
+            background-color:rgb(254, 254, 254);
+            gap:10px;
+
+        }
+        
+        img{
+            position:absolute;
+            top:100px;
+            width:400px;
+            
+        }
+        .box{
+            width:20px;
+            height:20px;
+            background-color:white;
+            border-radius:50%;
+            animation:up-down 1s infinite alternate ;
+        }
+        @keyframes up-down {
+            0%{
+                transform:translate(0,0);
+            }
+            
+            100%{
+                transform:translateY(-30px);
+
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+            <img src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-google-sva-scholarship-20.png">
+            <div class="box" style="animation-delay: 0.2s; background-color:#4285F4"></div>
+            <div class="box" style="animation-delay: 0.3s;background-color:#DB4437"></div>
+            <div class="box" style="animation-delay: 0.4s;background-color:#F4B400"></div>
+            <div class="box" style="animation-delay: 0.5s;background-color:#0F9D58"></div>
+
+        
+    </div>
+</body>
+</html>
