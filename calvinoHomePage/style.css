@@ -1,0 +1,205 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.absolute {
+    position: absolute;
+
+}
+
+.flex {
+    display: flex;
+
+}
+
+.font {
+    font-family: "Noto Sans", sans-serif;
+}
+
+.nav {
+    top: 0;
+    left: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    height: 50px;
+    justify-content: space-evenly;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.1rem;
+}
+
+#logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#logo i {
+    color: red;
+}
+
+.container {
+    position: relative;
+    margin-inline: auto;
+    height: 100vh;
+    width: 80%;
+    background-image: url("https://media.istockphoto.com/id/1128549018/photo/pink-orange-backgrounds-watercolor-painting-abstract.jpg?s=2048x2048&w=is&k=20&c=SjUDARs6oQg2afzAvGKV_XE7DmfxQKUf2TvOAPoa7-Y=");
+}
+
+.top-text {
+    margin: 20px;
+    height: 200px;
+    width: 250px;
+    left: 150px;
+    top: 50px;
+    justify-content: space-evenly;
+    gap: 10px;
+    flex-direction: column;
+
+}
+
+.top-text p {
+    font-size: 0.7rem;
+}
+
+.box1 {
+    padding: 5px;
+    margin: 5px;
+    height: max-content;
+    width: max-content;
+    top: 5px;
+    background-color: white;
+    color: rgb(251, 51, 131);
+    border: 1px solid rgb(227, 221, 221);
+    font-size: 0.7rem;
+    border-radius: 25px;
+    text-align: left;
+}
+
+.content {
+    flex-direction: column;
+    gap: 5px;
+    height: 80%;
+}
+
+.box2 {
+    background-color: #ff5c2e;
+    color: white;
+    align-content: center;
+    width: max-content;
+    height: 10%;
+    border: 1px solid;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.image {
+    right: 10px;
+    top: 0;
+    height: 400px;
+    width: 500px;
+
+}
+
+.image img {
+    height: 400px;
+    width: 500px;
+    border-radius: 100px 0 50px 100px;
+    box-shadow: rgb(197, 197, 249) 0px 5px 10px 10px;
+}
+
+.bottom-text {
+    height: 100px;
+    width: 400px;
+    top: 50%;
+    left: 28%;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottom {
+    width: 800px;
+    height: 200px;
+    bottom: 10px;
+    left: 20%;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.bottom-box {
+    border: 1px solid black;
+    height: 170px;
+    width: 200px;
+    flex-direction: column;
+    align-items: space-evenly;
+    justify-content: space-evenly;
+    border: hidden;
+    background-color: white;
+    padding: 10px;
+
+}
+
+i {
+    background-color: rgb(255, 190, 226);
+    font-size: 1.3rem;
+    padding: 10px;
+    width: max-content;
+    border-radius: 50%;
+}
+
+.bottom-box p {
+    font-size: 0.9rem;
+}
+
+#circle1 {
+    width: 100px;
+    height: 150px;
+    background-color: rgb(212, 224, 248);
+    border-top-right-radius: 70px;
+    border-bottom-right-radius: 70px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    filter: blur(10px);
+}
+
+#circle2 {
+    width: 200px;
+    height: 200px;
+    background-color: rgb(212, 224, 248);
+    border-radius: 50%;
+    position: absolute;
+    left: 450px;
+    top: 90px;
+    filter: blur(10px);
+
+}
+
+#circle3 {
+    width: 150px;
+    height: 200px;
+    background-color: rgb(212, 224, 248);
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+    position: absolute;
+    right: 0;
+    bottom: 50px;
+    filter: blur(20px);
+}
+
+@media screen and (mx-width:420px) {
+    .container {
+        height: 100%;
+        width: 100%;
+        margin:0;
+    }
+
+}
