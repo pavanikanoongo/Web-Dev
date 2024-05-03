@@ -1,0 +1,239 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.container {
+    position: relative;
+    background-color: rgb(1, 1, 49);
+    background-image: url("https://pngimg.com/uploads/coffee_beans/coffee_beans_PNG9291.png");
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    height: 90vh;
+    width: 100%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 20%;
+
+}
+
+ul {
+    display:flex;
+    list-style: none;
+    justify-content: space-evenly;
+    font-size: 1.3rem;
+    font-weight: bold;
+    
+}
+
+a {
+    padding-bottom: 2px;
+    text-decoration: none;
+    color: rgb(238, 195, 116);
+    animation:1s appear ease-in both 1s;
+
+}
+.nav {
+    top: 10px;
+    right: 260px;
+    width: 400px;
+    height: 30px;
+}
+
+.top-text {
+    top: 130px;
+    right: 450px;
+    height: 170px;
+    width: 550px;
+    text-align: center;
+    line-height: 50px;
+    padding-top: 10px;
+    animation:come-down 1s ease-in backwards;
+
+
+}
+
+#start {
+    color: white;
+    font-size: 5rem;
+    display: inline;
+    font-family: "Oswald", sans-serif;
+    font-weight: 300;
+
+
+}
+
+#coffee {
+    color: rgb(238, 195, 116);
+    font-size: 5rem;
+    display: inline;
+    margin: 10px;
+    font-family: "Oswald", sans-serif;
+    font-weight: extralight;
+}
+
+.middle-text {
+    top: 310px;
+    right: 500px;
+    height: 170px;
+    width: 480px;
+    
+}
+
+.middle-text p {
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 200;
+    margin-top: 40px;
+    animation:come-up 1s ease-in backwards;
+}
+
+.offer {
+
+    border: 2px solid;
+    height: 50px;
+    width: 200px;
+    bottom: 40px;
+    right: 650px;
+    border-radius: 30px;
+    border-color: rgb(238, 195, 116);
+    color: rgb(238, 195, 116);
+    font-size: 1.6rem;
+    font-family: "Oswald", sans-serif;
+    text-align: center;
+    letter-spacing: 4px;
+    font-weight: 500;
+    animation:come-up 1s ease-in backwards;
+}
+
+.logo {
+
+    width: 80px;
+    height: 140px;
+    top: 100px;
+    left: 200px;
+    color: rgb(238, 195, 116);
+    font-size: 2.5rem;
+    font-family: "Sacramento", cursive;
+    line-height: 30px;
+
+}
+
+.image {
+    width: 300px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 200px;
+    bottom: 0px;
+    
+   
+
+}
+.bubble{
+    width:50px;
+    height:50px;
+    border:1px solid white;
+    background-color:rgb(219, 212, 212);
+    border-radius:50%;
+    z-index:1;
+    animation: go-up 2s linear infinite 2s backwards;
+    filter:blur(10px);
+    
+    
+}
+#b1{
+    position:absolute;
+    right:130px;
+    top:-10px;
+}
+#b2{
+    position:absolute;
+    left:100px;
+    top:-20px;
+}
+#b3{
+    position:absolute;
+    left:130px;
+    top:-5px;
+}
+
+img {
+    width: 550px;
+    height: 500px;
+    animation: 1s slide-image cubic-bezier(0.42, 0, 0, 1.68) both 1s;
+}
+
+.offer:hover {
+    background-color: rgb(238, 195, 116);
+    color: black;
+    transition: 1s;
+}
+
+li:hover {
+    border-bottom: 1px solid rgb(238, 195, 116);
+    text-decoration-color: rgb(238, 195, 116);
+    transition: 0.3s;
+}
+
+@keyframes slide-image {
+    0% {
+        transform: translateX(-110%);
+    }
+    80%{
+        transform: skew(-5deg);
+        transition:1s ease-in;
+    }
+    90%{
+        transform: skew(5deg);
+        transition:1s ease-in;
+    }
+    100%{
+        transform: skew(0deg);
+        transition:1s ease-in;
+    }
+
+}
+@keyframes come-down{
+    0%{
+        transform:translateY(-200%);
+    }
+    100%{
+    }
+}
+@keyframes come-up{
+    0%{
+        transform:translateY(400%);
+    }
+    100%{
+    }
+}
+@keyframes appear{
+    0%{
+        color:rgb(1, 1, 49);
+    }
+    100%{
+        color:rgb(238, 195, 116);
+    }
+}
+@keyframes go-up{
+    0%{
+        transform: translate(0,10px)scale(0.8);
+        display:none;
+    }
+    50%{
+        
+        transform:translate(-20px,-100px) scale(1) ;
+    }
+    100%{
+        background-color: transparent;
+        transform:translate(20px,-150px) scale(2) ;
+    }
+}
