@@ -183,15 +183,16 @@
 .the-view {
     width: 100%;
     height: 600px;
+    left:300px
 }
 #blur-image {
-    margin-left: 300px;
+    left: 300px;
     filter: blur(5px);
     z-index: -2;
 }
 #blur-image2 {
     filter: blur(5px);
-    height: 50%;
+    /* height: 50%; */
     object-fit: cover;
     z-index:-2;
 }
@@ -352,7 +353,8 @@ textarea,input {
     align-items: center;
     font-size: 1.4rem;
     bottom: 20vw;
-    position: absolute;
+    background-color: #fff;
+    margin:10px;
 }
 .phone-div i{
     animation:shake 0.5s infinite cubic-bezier(1, -0.91, 0, 2.19);
@@ -413,3 +415,29 @@ a:hover{
     }
 }
 
+@media screen and (min-width: 500px) and (max-width:1054px){
+    .container,.nav,.image img,.page3,.page4,.page5{
+        width:200vw;
+    }
+    #middle-text{
+        font-size: 2.8rem;
+    }
+    .area{
+        font-size: 2rem;
+    }
+    .the-view{
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .inside-image{
+        left:650px;
+        top:380px;
+    }
+    .phone-div,.email-div{
+        width:50vw;
+    }
+    .email-div{
+        left:60vw;
+    }
+}

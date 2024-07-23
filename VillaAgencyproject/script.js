@@ -22,6 +22,7 @@ setInterval(()=>{
     }
 },1000)
  
+insideImage.style.transition="1s ease";
 let j=0;
 
 setInterval(()=>{
@@ -38,7 +39,6 @@ setInterval(()=>{
    j++;
    if(j===iconText.length){
     j=0;
-    console.log("changed")
    }
 },1500)
 
