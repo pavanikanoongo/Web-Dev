@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stopwatch</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/19b655bc94.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container" id="container">
+      <img
+        src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3NrOTc5MS1pbWFnZS1rd3Z1amE5Ni5qcGc.jpg"
+        alt="background-image"
+      />
+      <div class="box" id="box">
+        <!-- <p id="time"></p> -->
+        <p id="time">
+          <span id="hours-substring1">0</span
+          ><span id="hours-substring2">0</span>
+          <span>:</span>
+          <span id="minutes-substring1">0</span
+          ><span id="minutes-substring2">0</span>
+          <span>:</span>
+          <span id="seconds-substring1">0</span
+          ><span id="seconds-substring2">0</span>
+          <span>:</span>
+          <span id="miliseconds-substring1">0</span
+          ><span id="miliseconds-substring2">0</span>
+        </p>
+        <div class="button-container">
+          <div class="button" id="start"><i class="fa-solid fa-play"></i>START</div>
+          <div class="button" id="pause"><i class="fa-solid fa-square"></i>PAUSE</div>
+          <div class="button" id="reset"><i class="fa-solid fa-arrows-rotate"></i>RESET</div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
