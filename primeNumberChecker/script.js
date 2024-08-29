@@ -18,7 +18,7 @@ function isPrime() {
         result.innerHTML = "Invalid Number";
     }
     else {
-        while (c * c < num) {
+        while (c * c <= num) {
             if (num % c == 0) {
                 prime = false;
                 break;
@@ -29,9 +29,11 @@ function isPrime() {
         }
         if (prime) {
             result.innerHTML = (`${num} is prime number`);
+            console.log("Prime")
         }
         else {
             result.innerHTML = (`${num} is not a prime number`);
+            console.log(" Not Prime")
         }
 
     }
