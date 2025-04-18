@@ -29,11 +29,34 @@ async function loadCategories() {
         console.error("Error fetching categories:", error);
     }
 }
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
 const startQuiz = async () => {
     const num = document.querySelector("#num-questions").value;
     const cat = document.querySelector("#category").value;
     const diff = document.querySelector("#difficulty").value;
     const lang = document.querySelector("#language").value;
+
+    // 🚨 Separate checks for category and language
+    if (!cat) {
+        alert("Please select a category before starting the quiz.");
+        return;
+    }
+    if (!diff) {
+        alert("Please select a difficulty level before starting the quiz.");
+        return;
+    }
+
+    if (!lang) {
+        alert("Please select a language before starting the quiz.");
+        return;
+    }
     // Convert language code to language name
     const languageName = "English"; // Always send English to the backend
     time = parseInt(document.querySelector("#time").value);
@@ -43,7 +66,7 @@ const startQuiz = async () => {
         const response = await fetch(url);
         questions = await response.json();
 
-        questions = questions.slice(0, num);
+        questions = shuffleArray(questions).slice(0, num);
         if (questions.length > 0) {
             document.querySelector(".start-screen").classList.add("hide");
             document.querySelector(".quiz").classList.remove("hide");
@@ -57,28 +80,55 @@ const startQuiz = async () => {
     }
 };
 const startTimer = () => {
-    let remainingTime = time; // ✅ Use the selected time per question
+    let remainingTime = time;
 
-    timer = setInterval(() => {
-        if (remainingTime >= 0) {
-            progress(remainingTime);
-            remainingTime--;
-        } else {
-            clearInterval(timer);
-            checkAnswer(); // Auto-submit answer when time runs out
-            
-            // ✅ Change Submit button to Next
-            submitBtn.style.display = "none";
-            nextBtn.style.display = "block";
-        }
-    }, 1000);
+    const progressBar = document.querySelector(".progress-bar");
+    const progressText = document.querySelector(".progress-text");
+
+    clearInterval(timer); // Clear old timer if any
+
+    // ✅ Instantly reset styles
+    progressBar.style.transition = "none";
+    progressBar.style.width = "100%";
+    progressText.textContent = `${remainingTime}`;
+
+    // 🔁 Force reflow to re-apply transition cleanly
+    void progressBar.offsetWidth;
+
+    // ✅ Start animation
+    progressBar.style.transition = `width ${time}s linear`;
+    progressBar.style.width = "0%";
+
+    // ✅ Delay first countdown update by 1s to avoid fast 10 → 9
+    timer = setTimeout(() => {
+        remainingTime--;
+
+        progressText.textContent = `${remainingTime}`;
+
+        // Then switch to interval for remaining seconds
+        timer = setInterval(() => {
+            if (remainingTime > 0) {
+                remainingTime--;
+                progressText.textContent = `${remainingTime}`;
+            } else {
+                clearInterval(timer);
+                checkAnswer();
+                submitBtn.style.display = "none";
+                nextBtn.style.display = "block";
+            }
+        }, 1000);
+    }, 1000); // 1-second initial delay
 };
+
 
 
 const submitBtn = document.querySelector(".submit");
 const nextBtn = document.querySelector(".next");
 
 async function translateText(text, targetLanguage) {
+    if (targetLanguage === "en" || targetLanguage === "en-GB" || targetLanguage === "en-US") {
+        return text; // ✅ Skip translation if language is English
+    }
     const apiUrl = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=en|${targetLanguage}`;
     const response = await fetch(apiUrl);
     const data = await response.json();
@@ -101,10 +151,11 @@ const showQuestion = async (question) => {
             console.error("Error: Question is undefined or null.");
             return;
         }
-        
+       
         const questionText = document.querySelector(".question");
         const answersWrapper = document.querySelector(".answer-wrapper");
         const questionNumber = document.querySelector(".number");
+
 
         // 🔹 Get selected language
         const targetLanguage = document.querySelector("#language").value;
@@ -112,7 +163,7 @@ const showQuestion = async (question) => {
         // 🔹 Translate question
         const translatedQuestion = await translateText(question.questionText, targetLanguage);
         questionText.innerHTML = translatedQuestion;
-       
+
 
         // ✅ Fetch answers for the specific question
         const answerResponse = await fetch(`http://localhost:8080/answers/by-question?questionId=${question.id}`);
@@ -122,8 +173,8 @@ const showQuestion = async (question) => {
             console.error("Error: No answers found for question ID", question.id);
             return;
         }
-         // 🔹 Translate answers
-         const translatedAnswers = await Promise.all(
+        // 🔹 Translate answers
+        const translatedAnswers = await Promise.all(
             answerData.map(async (ans) => ({
                 text: await translateText(ans.answerText, targetLanguage), // Translate answer
                 isCorrect: ans.isCorrect,
@@ -145,7 +196,7 @@ const showQuestion = async (question) => {
                 </div>`;
         });
 
-        questionNumber.innerHTML = `Question ${currentQuestion}/${questions.length}`;
+        questionNumber.innerHTML = `Question ${currentQuestion + 1}/${questions.length}`;
 
         // ✅ Add event listener to answers
         const answersDiv = document.querySelectorAll(".answer");
